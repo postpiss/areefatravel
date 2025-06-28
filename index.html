@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Areefa Family Travel - Layanan Travel Nyaman untuk Keluarga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        premiumBlue: {
+                            100: '#e6f0ff',
+                            200: '#b3d1ff',
+                            300: '#80b3ff',
+                            400: '#4d94ff',
+                            500: '#1a75ff',
+                            600: '#005ce6',
+                            700: '#0047b3',
+                            800: '#003280',
+                            900: '#001d4d',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-image {
+            height: 80vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .form-input {
+            transition: all 0.3s ease;
+            border: 1px solid #d1d5db;
+        }
+        
+        .form-input:focus {
+            border-color: #1a75ff;
+            box-shadow: 0 0 0 3px rgba(26, 117, 255, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-image {
+                height: 50vh;
+            }
+        }
+
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-premiumBlue-900 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-car text-premiumBlue-400 text-2xl"></i>
+                <h1 class="text-xl md:text-2xl font-bold">Areefa Family Travel</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-premiumBlue-300 transition">Beranda</a>
+                <a href="#services" class="hover:text-premiumBlue-300 transition">Layanan</a>
+                <a href="#destinations" class="hover:text-premiumBlue-300 transition">Destinasi</a>
+                <a href="#testimonials" class="hover:text-premiumBlue-300 transition">Testimoni</a>
+                <a href="#booking" class="hover:text-premiumBlue-300 transition">Pemesanan</a>
+            </nav>
+            <button class="md:hidden text-xl" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-premiumBlue-800 px-4 py-2" id="mobile-menu">
+            <a href="#home" class="block py-2 hover:text-premiumBlue-300 transition">Beranda</a>
+            <a href="#services" class="block py-2 hover:text-premiumBlue-300 transition">Layanan</a>
+            <a href="#destinations" class="block py-2 hover:text-premiumBlue-300 transition">Destinasi</a>
+            <a href="#testimonials" class="block py-2 hover:text-premiumBlue-300 transition">Testimoni</a>
+            <a href="#booking" class="block py-2 hover:text-premiumBlue-300 transition">Pemesanan</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-image">
+        <picture>
+            <source media="(max-width: 768px)" srcset="https://cdn.orderonline.id/uploads/images_7180771751130990667.png">
+            <source media="(min-width: 769px)" srcset="https://cdn.orderonline.id/uploads/images_7180771751130990667.png">
+            <img src="https://cdn.orderonline.id/uploads/images_7180771751130990667.png" alt="Areefa Family Travel" class="w-full h-full object-cover">
+
+    </section>
+
+    <!-- Hero Title Section -->
+    <section class="py-16 bg-premiumBlue-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 animate-fade-in">AREEFA FAMILY TRAVEL</h1>
+            <div class="w-32 h-1 bg-premiumBlue-400 mx-auto mb-6"></div>
+            <p class="text-xl md:text-2xl text-premiumBlue-200 max-w-3xl mx-auto">
+                Layanan travel keluarga dengan kenyamanan dan keamanan sebagai prioritas utama kami.
+            </p>
+        </div>
+    </section>
+
+    <!-- Product Description -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-premiumBlue-900 mb-4">Kenapa Memilih Kami?</h2>
+                <div class="w-24 h-1 bg-premiumBlue-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Memberikan pengalaman perjalanan yang nyaman dan aman untuk seluruh keluarga Anda dengan armada terbaik dan pelayanan prima.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-premiumBlue-50 p-8 rounded-xl shadow-md text-center">
+                    <div class="text-premiumBlue-600 text-4xl mb-4">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-premiumBlue-900 mb-2">Armada Nyaman</h3>
+                    <p class="text-gray-600">
+                        Toyota Calya terawat dengan AC dingin dan kursi empuk untuk kenyamanan perjalanan Anda.
+                    </p>
+                </div>
+                
+                <div class="bg-premiumBlue-50 p-8 rounded-xl shadow-md text-center">
+                    <div class="text-premiumBlue-600 text-4xl mb-4">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-premiumBlue-900 mb-2">Sopir Profesional</h3>
+                    <p class="text-gray-600">
+                        Sopir berpengalaman, ramah, dan mengutamakan keselamatan penumpang.
+                    </p>
+                </div>
+                
+                <div class="bg-premiumBlue-50 p-8 rounded-xl shadow-md text-center">
+                    <div class="text-premiumBlue-600 text-4xl mb-4">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-premiumBlue-900 mb-2">Harga Kompetitif</h3>
+                    <p class="text-gray-600">
+                        Tarif kompetitif dengan pelayanan terbaik untuk keluarga Anda.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Destinations -->
+    <section id="destinations" class="py-16 bg-premiumBlue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-premiumBlue-900 mb-4">Destinasi Perjalanan</h2>
+                <div class="w-24 h-1 bg-premiumBlue-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Beberapa rute favorit yang sering dipilih oleh pelanggan kami
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Surabaya -->
+                <div class="destination-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://img.inews.co.id/media/1200/files/inews_new/2024/01/30/Julukan_kota_Surabaya.jpg" alt="Surabaya" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-premiumBlue-900 mb-2">Malang - Surabaya</h3>
+                        <p class="text-gray-600 mb-4">Perjalanan nyaman ke Kota Pahlawan melalui jalan tol.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-premiumBlue-600 font-bold text-lg">Rp 550.000,-</span>
+                            <span class="bg-premiumBlue-100 text-premiumBlue-800 text-xs px-2 py-1 rounded">FULL TOL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gresik -->
+                <div class="destination-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://investasiproperti.id/wp-content/uploads/2023/03/alasan-tinggal-di-gresik.jpg" alt="Gresik" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-premiumBlue-900 mb-2">Malang - Gresik</h3>
+                        <p class="text-gray-600 mb-4">Perjalanan langsung ke kota industri di Jawa Timur.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-premiumBlue-600 font-bold text-lg">Rp 700.000,-</span>
+                            <span class="bg-premiumBlue-100 text-premiumBlue-800 text-xs px-2 py-1 rounded">FULL TOL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blitar -->
+                <div class="destination-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://static.promediateknologi.id/crop/0x398:1080x1195/0x0/webp/photo/p2/74/2024/07/13/Screenshot_20240713_090422-2581780730.jpg" alt="Blitar" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-premiumBlue-900 mb-2">Malang - Blitar</h3>
+                        <p class="text-gray-600 mb-4">Perjalanan singkat ke kota kelahiran Bung Karno.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-premiumBlue-600 font-bold text-lg">Rp 400.000,-</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Kediri -->
+                <div class="destination-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://cdngnfi2.sgp1.cdn.digitaloceanspaces.com/gnfi/uploads/images/2022/12/1916402022-simpanglimagumul-kediri.jpg" alt="Kediri" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-premiumBlue-900 mb-2">Malang - Kediri</h3>
+                        <p class="text-gray-600 mb-4">Perjalanan langsung ke kota Kediri.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-premiumBlue-600 font-bold text-lg">Rp 475.000,-</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nganjuk -->
+                <div class="destination-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://assets.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/radarkediri/2023/01/IMG-20230127-WA0023.jpg" alt="Nganjuk" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-premiumBlue-900 mb-2">Malang - Nganjuk</h3>
+                        <p class="text-gray-600 mb-4">Perjalanan langsung ke kota Nganjuk.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-premiumBlue-600 font-bold text-lg">Rp 800.000,-</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Open Trip -->
+                <div class="destination-card bg-white rounded-xl overflow-hidden shadow-lg transition duration-300">
+                    <img src="https://www.agoda.com/wp-content/uploads/2024/08/Alun-Alun-Tugu-Malang-Indonesia-featured-1244x700.jpg" alt="Alun-Alun Tugu Malang" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-premiumBlue-900 mb-2">Open Trip Malang Raya</h3>
+                        <p class="text-gray-600 mb-4">FULL DAY BEBAS KEMANA SAJA (TIDAK TERMASUK BBM)</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-premiumBlue-600 font-bold text-lg">Rp 375.000,-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price List -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-premiumBlue-900 mb-4">Daftar Harga</h2>
+                <div class="w-24 h-1 bg-premiumBlue-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto">
+                    Berikut adalah tarif resmi untuk berbagai tujuan perjalanan
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-premiumBlue-50 rounded-xl shadow-md overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-premiumBlue-200">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-premiumBlue-900 mb-6 text-center">Rute Reguler</h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center border-b border-premiumBlue-200 pb-2">
+                                <span>Malang - Surabaya</span>
+                                <span class="font-bold text-premiumBlue-600">Rp 550.000,-</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-premiumBlue-200 pb-2">
+                                <span>Malang - Gresik</span>
+                                <span class="font-bold text-premiumBlue-600">Rp 700.000,-</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-premiumBlue-200 pb-2">
+                                <span>Malang - Blitar</span>
+                                <span class="font-bold text-premiumBlue-600">Rp 400.000,-</span>
+                            </li>
+                            <li class="flex justify-between items-center border-b border-premiumBlue-200 pb-2">
+                                <span>Malang - Kediri</span>
+                                <span class="font-bold text-premiumBlue-600">Rp 475.000,-</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-2">
+                                <span>Malang - Nganjuk</span>
+                                <span class="font-bold text-premiumBlue-600">Rp 800.000,-</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-premiumBlue-900 mb-6 text-center">Layanan Lainnya</h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center border-b border-premiumBlue-200 pb-2">
+                                <span>Open Trip Malang Raya</span>
+                                <span class="font-bold text-premiumBlue-600">Rp 375.000,-</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-premiumBlue-100 px-6 py-4">
+                    <p class="text-premiumBlue-800 text-sm">
+                        <i class="fas fa-info-circle mr-2"></i> Harga dapat berubah tanpa pemberitahuan. Untuk informasi lebih lanjut, silakan hubungi kami.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 bg-premiumBlue-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Apa Kata Pelanggan Kami?</h2>
+                <div class="w-24 h-1 bg-premiumBlue-400 mx-auto mb-6"></div>
+                <p class="text-premiumBlue-200 max-w-3xl mx-auto">
+                    Testimoni jujur dari pelanggan yang telah merasakan layanan kami
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-premiumBlue-800 p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-premiumBlue-600 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Budi Santoso</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-premiumBlue-200">
+                        "Sangat puas dengan pelayanan Areefa Family Travel. Sopirnya ramah dan mobilnya nyaman. Keluarga saya betah selama perjalanan ke Surabaya. Pasti akan menggunakan jasa mereka lagi."
+                    </p>
+                </div>
+                
+                <div class="testimonial-card bg-premiumBlue-800 p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-premiumBlue-600 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Dewi Anggraeni</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-premiumBlue-200">
+                        "Pertama kali mencoba Areefa untuk perjalanan ke Blitar. AC mobil sangat dingin dan kursinya empuk. Anak-anak tidak rewel selama perjalanan. Harga juga sangat bersaing untuk kualitas yang diberikan."
+                    </p>
+                </div>
+                
+                <div class="testimonial-card bg-premiumBlue-800 p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-premiumBlue-600 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Hendra Wijaya</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-premiumBlue-200">
+                        "Sudah beberapa kali menggunakan jasa Areefa untuk perjalanan bisnis ke Gresik. Selalu tepat waktu dan sopirnya profesional. Tidak pernah mengecewakan. Sangat direkomendasikan!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="h-48 bg-cover bg-center" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5UBTUIKkko-cMJCUgM8Yd6-ksiXgjLLNEyK-CscZzq2v6DD2V1z0he6KvMfum_n4D2G5oQy4V8n2Tx1BG-QFzmIflgbnld0DK2CJ6Qwp7JfzBf6tb5V2Bsq2oSrZiEgnMT0QwMSRg2o5zYTqXLB7SSg2PWSvDXHY668bXFHyPZ-Fep67G3Zfd607uNA/s1293/home%20banner%20calya%201293x820.jpg')">
+                    <div class="h-full bg-premiumBlue-900 bg-opacity-70 flex items-center justify-center">
+                        <div class="text-center text-white px-4">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-2">Pesan Sekarang</h2>
+                            <p class="text-premiumBlue-200">Hubungi kami di <span class="font-bold">+62 822-3303-8324</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-8">
+                    <form id="booking-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                            <input type="text" id="name" name="name" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-premiumBlue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Nomor Telepon</label>
+                            <input type="tel" id="phone" name="phone" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-premiumBlue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="destination" class="block text-sm font-medium text-gray-700 mb-1">Tujuan Perjalanan</label>
+                            <select id="destination" name="destination" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-premiumBlue-500">
+                                <option value="">Pilih Tujuan</option>
+                                <option value="Malang - Surabaya">Malang - Surabaya (Rp 550.000)</option>
+                                <option value="Malang - Gresik">Malang - Gresik (Rp 700.000)</option>
+                                <option value="Malang - Blitar">Malang - Blitar (Rp 400.000)</option>
+                                <option value="Malang - Kediri">Malang - Kediri (Rp 475.000)</option>
+                                <option value="Malang - Nganjuk">Malang - Nganjuk (Rp 800.000)</option>
+                                <option value="Open Trip Malang">Open Trip Malang (Rp 375.000)</option>
+                                <option value="Lainnya">Lainnya (Tanya via WhatsApp)</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Tanggal Perjalanan</label>
+                            <input type="date" id="date" name="date" required class="form-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-premiumBlue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Pesan Tambahan</label>
+                            <textarea id="message" name="message" rows="3" class="form-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-premiumBlue-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-premiumBlue-600 hover:bg-premiumBlue-500 text-white font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center">
+                            <i class="fab fa-whatsapp mr-2 text-xl"></i> Pesan via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-premiumBlue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Areefa Family Travel</h3>
+                    <p class="text-premiumBlue-200">
+                        Layanan travel keluarga dengan kenyamanan dan keamanan sebagai prioritas utama kami.
+                    </p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-premiumBlue-300 hover:text-white text-xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-premiumBlue-300 hover:text-white text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-premiumBlue-300 hover:text-white text-xl">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Kontak Kami</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-premiumBlue-300"></i>
+                            <span>+62 822-3303-8324</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-premiumBlue-300"></i>
+                            <span>areefatravel@gmail.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-premiumBlue-300"></i>
+                            <span>Tirtasani Royal Resort Cluster Tirtaharmoni Blok B No 6 Karangploso Malang</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Jam Operasional</h3>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between">
+                            <span>Senin - Jumat</span>
+                            <span>08:00 - 20:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sabtu</span>
+                            <span>08:00 - 17:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Minggu</span>
+                            <span>09:00 - 15:00</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span class="font-bold">24 Jam</span>
+                            <span>Layanan Khusus</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-premiumBlue-800 mt-8 pt-8 text-center text-premiumBlue-300">
+                <p>&copy; 2023 Areefa Family Travel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/6282233038324" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg transition duration-300 z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Booking Form Submission
+        const bookingForm = document.getElementById('booking-form');
+        
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const destination = document.getElementById('destination').value;
+            const date = document.getElementById('date').value;
+            const message = document.getElementById('message').value;
+            
+            const whatsappMessage = `Halo Areefa Family Travel, saya ingin memesan layanan dengan detail sebagai berikut:%0A%0ANama: ${name}%0ANomor Telepon: ${phone}%0ATujuan: ${destination}%0ATanggal: ${date}%0APesan Tambahan: ${message || '-'}`;
+            
+            window.open(`https://wa.me/6282233038324?text=${whatsappMessage}`, '_blank');
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
